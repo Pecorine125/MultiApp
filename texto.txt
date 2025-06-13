@@ -16,3 +16,13 @@ OBS: Vai ter varias pasta assim:
             Pokémon 1
             Pokémon 2
             Pokémon 3
+            A Amiga da Minha Mãe
+            A Rainha Demônio Intrusa
+            Passando dos Limites
+            Essas Duas Gostosas Peitudas São Ingênuas
+            Meu Oyakodon
+            Combinação Feita No Paraíso: O Companheiro de Foda Perfeito
+            Combinação Feita No Paraíso: O Companheiro de Foda Perfeito 2
+
+    os WallpaperEspecial vão estar com esse nome: Wallpaper Especial + Number.jpg entre o Number e o Nome precisa ter um espaço e vão estar nesse diretórios: Pecorine125/MultiApp/src/Wallpaper
+    e as Musicas vai ter nomes diferentes, e vai estar nesse diretório: Pecorine125/MultiApp/src/Music
