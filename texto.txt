@@ -10,4 +10,9 @@ Quero Criar um site que vai ter essa seguintes funções:
         CloseApp que vai fechar a janela(Programa)
 
 OBS: Vai ter varias pasta assim:
-    
+    Manga Onde vai ter varias SubPatsa: 
+        Pecorine125/MultiApp/src/Manga:
+            Dragon Ball
+            Pokémon 1
+            Pokémon 2
+            Pokémon 3
