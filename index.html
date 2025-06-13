@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MultiApp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="progressScreen">
+    <video src="video.mp4" autoplay muted loop></video>
+    <div>
+      <progress id="progressBar" value="0" max="100"></progress>
+      <div id="progressValue">0%</div>
+    </div>
+  </div>
 
+  <div id="loginScreen" class="hidden">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="E-Mail"><br>
+    <input type="password" id="senha" placeholder="Senha"><br>
+    <button onclick="validarLogin()">Entrar</button>
+  </div>
+
+  <div id="menuScreen" class="hidden">
+    <h2>Menu Principal</h2>
+    <button onclick="abrir('wallpaper')">WallpaperEspecial</button>
+    <button onclick="abrir('music')">MusicPrime</button>
+    <button onclick="abrir('mangaMenu')">MenuManga</button>
+    <button onclick="fecharApp()">CloseApp</button>
+  </div>
+
+  <div id="wallpaperScreen" class="hidden">
+    <img id="wallpaperImg" src="">
+    <div class="button-group">
+      <button onclick="mudarWallpaper(-1)">Back</button>
+      <button onclick="voltarMenu()">BackMenu</button>
+      <button onclick="mudarWallpaper(1)">Next</button>
+    </div>
+    <div class="button-group">
+      <button onclick="fecharApp()">CloseApp</button>
+      <button onclick="baixarWallpaper()">Baixar</button>
+    </div>
+  </div>
+
+  <div id="musicScreen" class="hidden">
+    <video id="musicVideo" src="" controls></video>
+    <div id="musicTitle">Nome da Música</div>
+    <div class="button-group">
+      <button onclick="playMusic()">Play</button>
+      <button onclick="voltarMenu()">BackMenu</button>
+      <button onclick="pauseMusic()">Pause</button>
+    </div>
+    <button onclick="fecharApp()">CloseApp</button>
+  </div>
+
+  <div id="mangaMenuScreen" class="hidden">
+    <h2>Menu de Mangás</h2>
+    <select id="mangaSelect"></select><br><br>
+    <button onclick="abrirManga()">Abrir Manga</button>
+    <button onclick="voltarMenu()">BackMenu</button>
+  </div>
+
+  <div id="mangaScreen" class="hidden">
+    <img id="mangaImg" src="">
+    <div class="button-group">
+      <button onclick="mudarMangaImg(-1)">Back</button>
+      <button onclick="voltarMangaMenu()">BackManga</button>
+      <button onclick="mudarMangaImg(1)">Next</button>
+    </div>
+    <div class="button-group">
+      <button onclick="voltarMenu()">BackMenu</button>
+      <button onclick="fecharApp()">CloseApp</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
