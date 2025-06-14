@@ -45,7 +45,9 @@ button:hover {
 }
 
 @media (min-width: 600px) {
-  video {
+  .video-js {
     max-width: 600px;
+    width: 100%;
+    height: auto;
   }
 }
