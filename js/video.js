@@ -1,7 +1,7 @@
 // Lista dos vídeos - substitua pelos seus IDs do Google Drive
 const videos = [
   { id: "1JGx5ufrVfDYduZnQbdW5SuVw6NCsTTte", title: "Vídeo 1" },
-  { id: "COLOQUE_ID_AQUI", title: "Vídeo 2" },
+  { id: "1JGx5ufrVfDYduZnQbdW5SuVw6NCsTTte", title: "Vídeo 2" },
   { id: "COLOQUE_ID_AQUI", title: "Vídeo 3" },
   // Adicione quantos quiser
 ];
