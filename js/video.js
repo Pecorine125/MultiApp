@@ -6,10 +6,11 @@ const videos = [
 
 let currentIndex = 0;
 
-const videoPlayer = document.getElementById("videoPlayer");
-const videoTitle = document.getElementById("videoTitle");
+// Inicializa player Video.js
+const player = videojs('videoPlayer');
 
 function getVideoUrl(id) {
+  // URL streaming para Google Drive
   return `https://drive.google.com/uc?id=${id}&export=streaming`;
 }
 
@@ -27,20 +28,22 @@ function loadVideo(index) {
     return;
   }
 
-  videoPlayer.src = getVideoUrl(currentVideo.id);
-  videoTitle.textContent = currentVideo.title;
+  const url = getVideoUrl(currentVideo.id);
 
-  videoPlayer.load();
-  videoPlayer.play().catch((err) => {
+  player.src({ src: url, type: 'video/mp4' });
+  player.play().catch((err) => {
     console.error("Erro ao reproduzir o vídeo:", err);
     alert("Erro ao tentar reproduzir o vídeo. Verifique se o vídeo está público e no formato correto (.mp4 com H.264 + AAC).");
   });
+
+  document.getElementById("videoTitle").textContent = currentVideo.title;
 }
 
+// Controles
 document.getElementById("prevBtn").onclick = () => loadVideo(currentIndex - 1);
 document.getElementById("nextBtn").onclick = () => loadVideo(currentIndex + 1);
-document.getElementById("playBtn").onclick = () => videoPlayer.play();
-document.getElementById("pauseBtn").onclick = () => videoPlayer.pause();
+document.getElementById("playBtn").onclick = () => player.play();
+document.getElementById("pauseBtn").onclick = () => player.pause();
 document.getElementById("backMenuBtn").onclick = () => window.location.href = "menu.html";
 document.getElementById("closeBtn").onclick = () => {
   if (confirm("Quer fechar esta janela?")) {
@@ -51,4 +54,5 @@ document.getElementById("closeBtn").onclick = () => {
   }
 };
 
+// Carrega o primeiro vídeo ao iniciar
 loadVideo(0);
