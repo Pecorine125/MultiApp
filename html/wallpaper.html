@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Wallpaper Especial</title>
-  <link rel="stylesheet" href="css/wallpaper.css">
+  <meta charset="UTF-8" />
+  <title>WallpaperEspecial</title>
+  <link rel="stylesheet" href="../css/wallpaper.css" />
 </head>
 <body>
-  <div class="wallpaper-container">
-    <img id="wallpaperImg" src="" width="300" height="600">
-    <div class="controls">
-      <button onclick="mudarWallpaper(-1)">Back</button>
-      <button onclick="window.location.href='menu.html'">BackMenu</button>
-      <button onclick="mudarWallpaper(1)">Next</button>
-    </div>
-    <div class="extras">
-      <button onclick="window.close()">CloseApp</button>
-      <button onclick="baixarWallpaper()">Baixar</button>
-    </div>
+  <h1>WallpaperEspecial</h1>
+  <img id="wallpaperImg" src="../src/Wallpaper/Wallpaper Especial 1.jpg" width="300" height="600" alt="Wallpaper Especial" />
+  
+  <div>
+    <button id="backBtn">Back</button>
+    <button id="backMenuBtn">BackMenu</button>
+    <button id="nextBtn">Next</button>
   </div>
-  <script src="js/wallpaper.js"></script>
+  
+  <div>
+    <button id="closeBtn">CloseApp</button>
+    <button id="downloadBtn">Baixar</button>
+  </div>
+
+  <script src="../js/wallpaper.js"></script>
 </body>
 </html>

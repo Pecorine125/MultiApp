@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Progress Bar</title>
-  <link rel="stylesheet" href="css/progress.css">
+  <meta charset="UTF-8" />
+  <title>Progress</title>
+  <link rel="stylesheet" href="../css/progress.css" />
 </head>
 <body>
   <div class="container">
-    <video width="300" height="600" autoplay muted loop>
-      <source src="src/Music/intro.mp4" type="video/mp4">
+    <video id="video" width="300" height="600" autoplay muted loop>
+      <source src="../src/Music/musica1.mp4" type="video/mp4" />
       Seu navegador não suporta vídeo.
     </video>
+
     <progress id="progressBar" value="0" max="100"></progress>
-    <p id="progressValue">0%</p>
+    <div id="percent">0%</div>
   </div>
-  <script src="js/progress.js"></script>
+
+  <script src="../js/progress.js"></script>
 </body>
 </html>

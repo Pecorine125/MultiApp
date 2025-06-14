@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Menu de Mangás</title>
-  <link rel="stylesheet" href="css/manga.css">
+  <meta charset="UTF-8" />
+  <title>Menu Manga</title>
+  <link rel="stylesheet" href="../css/manga.css" />
 </head>
 <body>
-  <div class="manga-menu-container">
-    <h2>Escolha o Mangá</h2>
-    <select id="mangaSelect"></select>
-    <button onclick="abrirManga()">Abrir</button>
-    <button onclick="window.location.href='menu.html'">BackMenu</button>
-  </div>
-  <script src="js/manga.js"></script>
+  <h1>Menu Manga</h1>
+  <ul id="mangaList">
+    <li><button class="mangaBtn" data-manga="Dragon Ball">Dragon Ball</button></li>
+    <li><button class="mangaBtn" data-manga="Pokémon 1">Pokémon 1</button></li>
+    <li><button class="mangaBtn" data-manga="Pokémon 2">Pokémon 2</button></li>
+    <!-- Outros mangás aqui -->
+  </ul>
+
+  <script src="../js/manga.js"></script>
 </body>
 </html>

@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Login</title>
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="../css/login.css" />
 </head>
 <body>
-  <div class="login-container">
-    <h2>Login</h2>
-    <input type="email" id="email" placeholder="Digite seu e-mail">
-    <input type="password" id="senha" placeholder="Digite sua senha">
-    <button onclick="validarLogin()">Entrar</button>
-  </div>
-  <script src="js/login.js"></script>
+  <h1>Login</h1>
+  <form id="loginForm">
+    <label for="email">E-Mail:</label><br />
+    <input type="email" id="email" name="email" required /><br /><br />
+
+    <label for="password">Senha:</label><br />
+    <input type="password" id="password" name="password" required /><br /><br />
+
+    <button type="submit">Entrar</button>
+  </form>
+
+  <script src="../js/login.js"></script>
 </body>
 </html>

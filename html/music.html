@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Music Prime</title>
-  <link rel="stylesheet" href="css/music.css">
+  <meta charset="UTF-8" />
+  <title>MusicPrime</title>
+  <link rel="stylesheet" href="../css/music.css" />
 </head>
 <body>
-  <div class="music-container">
-    <video id="musicVideo" width="300" height="600" controls></video>
-    <p id="musicTitle"></p>
-    <div class="controls">
-      <button onclick="playMusic()">Play</button>
-      <button onclick="window.location.href='menu.html'">BackMenu</button>
-      <button onclick="pauseMusic()">Pause</button>
-    </div>
-    <div class="extras">
-      <button onclick="window.close()">CloseApp</button>
-    </div>
+  <h1>MusicPrime</h1>
+  <video id="musicVideo" width="300" height="600" controls>
+    <source src="../src/Music/musica1.mp4" type="video/mp4" />
+    Seu navegador não suporta vídeo.
+  </video>
+
+  <div id="musicTitle">Nome da Música</div>
+
+  <div>
+    <button id="playBtn">Play</button>
+    <button id="backMenuBtn">BackMenu</button>
+    <button id="pauseBtn">Pause</button>
   </div>
-  <script src="js/music.js"></script>
+
+  <div>
+    <button id="closeBtn">CloseApp</button>
+  </div>
+
+  <script src="../js/music.js"></script>
 </body>
 </html>
