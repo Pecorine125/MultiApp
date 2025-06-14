@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+ul#mangaList {
+  list-style: none;
+  padding: 0;
+}
+
+ul#mangaList li {
+  margin: 12px 0;
+}
+
+button.mangaBtn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  background-color: #17a2b8;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button.mangaBtn:hover {
+  background-color: #117a8b;
+}

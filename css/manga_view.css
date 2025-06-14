@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  padding: 20px;
+  text-align: center;
+}
+
+h1#mangaTitle {
+  margin-bottom: 20px;
+}
+
+img#mangaImage {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 0 12px #bbb;
+}
+
+button {
+  margin: 10px 8px;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
+  background-color: #6c757d;
+  color: white;
+  cursor: pointer;
+}
+
+button#closeBtn {
+  background-color: #dc3545;
+}
+
+button:hover {
+  opacity: 0.85;
+}
