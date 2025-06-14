@@ -1,15 +1,52 @@
-console.log("video.js carregado");
+// Lista dos vídeos - substitua pelos seus IDs do Google Drive
+const videos = [
+  { id: "ID_DO_VIDEO_1", title: "Vídeo 1" },
+  { id: "ID_DO_VIDEO_2", title: "Vídeo 2" },
+  { id: "ID_DO_VIDEO_3", title: "Vídeo 3" },
+  // Adicione quantos quiser
+];
 
-const video = document.getElementById('videoPrime');
-const playBtn = document.getElementById('playBtn');
-const pauseBtn = document.getElementById('pauseBtn');
-const backMenuBtn = document.getElementById('backMenuBtn');
-const closeBtn = document.getElementById('closeBtn');
+let currentIndex = 0;
 
-playBtn.onclick = () => video.play();
-pauseBtn.onclick = () => video.pause();
-backMenuBtn.onclick = () => window.location.href = 'menu.html';
-document.getElementById('closeBtn').onclick = () => {
+const videoPlayer = document.getElementById("videoPlayer");
+const videoTitle = document.getElementById("videoTitle");
+
+function getVideoUrl(id) {
+  return `https://drive.google.com/uc?export=download&id=${id}`;
+}
+
+function loadVideo(index) {
+  if (index < 0) index = videos.length - 1;
+  if (index >= videos.length) index = 0;
+  currentIndex = index;
+  videoPlayer.src = getVideoUrl(videos[currentIndex].id);
+  videoTitle.textContent = videos[currentIndex].title;
+  videoPlayer.load();
+  videoPlayer.play();
+}
+
+// Botões
+document.getElementById("prevBtn").onclick = () => {
+  loadVideo(currentIndex - 1);
+};
+
+document.getElementById("nextBtn")?.addEventListener("click", () => {
+  loadVideo(currentIndex + 1);
+});
+
+document.getElementById("playBtn").onclick = () => {
+  videoPlayer.play();
+};
+
+document.getElementById("pauseBtn").onclick = () => {
+  videoPlayer.pause();
+};
+
+document.getElementById("backMenuBtn").onclick = () => {
+  window.location.href = "menu.html";
+};
+
+document.getElementById("closeBtn").onclick = () => {
   if (confirm("Quer fechar esta janela?")) {
     window.close();
     setTimeout(() => {
@@ -18,3 +55,5 @@ document.getElementById('closeBtn').onclick = () => {
   }
 };
 
+// Inicializa com o primeiro vídeo
+loadVideo(0);
