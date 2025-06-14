@@ -1,8 +1,7 @@
 const videos = [
   { id: "1JGx5ufrVfDYduZnQbdW5SuVw6NCsTTte", title: "Vídeo 1" },
-  { id: "1JGx5ufrVfDYduZnQbdW5SuVw6NCsTTte", title: "Vídeo 2 (mesmo ID)" },
-  { id: "COLOQUE_ID_AQUI", title: "Vídeo 3" },
-  // Adicione mais conforme necessário
+  { id: "1JGx5ufrVfDYduZnQbdW5SuVw6NCsTTte", title: "Vídeo 2 (mesmo ID só para teste)" },
+  { id: "1JGx5ufrVfDYduZnQbdW5SuVw6NCsTTte", title: "Vídeo 3" }
 ];
 
 let currentIndex = 0;
@@ -17,12 +16,10 @@ function getVideoUrl(id) {
 function loadVideo(index) {
   if (videos.length === 0) return;
 
-  // Corrigir índice para circular
   if (index < 0) index = videos.length - 1;
   if (index >= videos.length) index = 0;
 
   currentIndex = index;
-
   const currentVideo = videos[currentIndex];
 
   if (!currentVideo.id || currentVideo.id.trim() === "") {
@@ -36,16 +33,15 @@ function loadVideo(index) {
   videoPlayer.load();
   videoPlayer.play().catch((err) => {
     console.error("Erro ao reproduzir o vídeo:", err);
-    alert("Erro ao tentar reproduzir o vídeo.");
+    alert("Erro ao tentar reproduzir o vídeo. Verifique se o vídeo está público e no formato correto (.mp4 com H.264 + AAC).");
   });
 }
 
-// Botões
 document.getElementById("prevBtn").onclick = () => loadVideo(currentIndex - 1);
 document.getElementById("nextBtn").onclick = () => loadVideo(currentIndex + 1);
 document.getElementById("playBtn").onclick = () => videoPlayer.play();
 document.getElementById("pauseBtn").onclick = () => videoPlayer.pause();
-document.getElementById("backMenuBtn").onclick = () => (window.location.href = "menu.html");
+document.getElementById("backMenuBtn").onclick = () => window.location.href = "menu.html";
 document.getElementById("closeBtn").onclick = () => {
   if (confirm("Quer fechar esta janela?")) {
     window.close();
@@ -55,5 +51,4 @@ document.getElementById("closeBtn").onclick = () => {
   }
 };
 
-// Inicializa com o primeiro vídeo
 loadVideo(0);
