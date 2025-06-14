@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Music Prime</title>
+  <link rel="stylesheet" href="css/music.css">
+</head>
+<body>
+  <div class="music-container">
+    <video id="musicVideo" width="300" height="600" controls></video>
+    <p id="musicTitle"></p>
+    <div class="controls">
+      <button onclick="playMusic()">Play</button>
+      <button onclick="window.location.href='menu.html'">BackMenu</button>
+      <button onclick="pauseMusic()">Pause</button>
+    </div>
+    <div class="extras">
+      <button onclick="window.close()">CloseApp</button>
+    </div>
+  </div>
+  <script src="js/music.js"></script>
+</body>
+</html>

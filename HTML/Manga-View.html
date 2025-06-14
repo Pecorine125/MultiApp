@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mangá Viewer</title>
+  <link rel="stylesheet" href="css/manga.css">
+</head>
+<body>
+  <div class="manga-view-container">
+    <img id="mangaImg" src="" width="300" height="600">
+    <div class="controls">
+      <button onclick="mudarMangaImg(-1)">Back</button>
+      <button onclick="window.location.href='manga_menu.html'">BackManga</button>
+      <button onclick="mudarMangaImg(1)">Next</button>
+    </div>
+    <div class="extras">
+      <button onclick="window.location.href='menu.html'">BackMenu</button>
+      <button onclick="window.close()">CloseApp</button>
+    </div>
+  </div>
+  <script src="js/manga.js"></script>
+</body>
+</html>
