@@ -1,9 +1,8 @@
-// Lista dos vídeos - substitua pelos seus IDs do Google Drive
 const videos = [
   { id: "1JGx5ufrVfDYduZnQbdW5SuVw6NCsTTte", title: "Vídeo 1" },
-  { id: "1JGx5ufrVfDYduZnQbdW5SuVw6NCsTTte", title: "Vídeo 2" },
+  { id: "1JGx5ufrVfDYduZnQbdW5SuVw6NCsTTte", title: "Vídeo 2 (mesmo ID)" },
   { id: "COLOQUE_ID_AQUI", title: "Vídeo 3" },
-  // Adicione quantos quiser
+  // Adicione mais conforme necessário
 ];
 
 let currentIndex = 0;
@@ -18,20 +17,20 @@ function getVideoUrl(id) {
 function loadVideo(index) {
   if (videos.length === 0) return;
 
-  // Garantir índice válido
+  // Corrigir índice para circular
   if (index < 0) index = videos.length - 1;
   if (index >= videos.length) index = 0;
 
   currentIndex = index;
 
   const currentVideo = videos[currentIndex];
-  if (!currentVideo.id) {
+
+  if (!currentVideo.id || currentVideo.id.trim() === "") {
     alert(`Vídeo "${currentVideo.title}" não possui um ID válido.`);
     return;
   }
 
-  const url = getVideoUrl(currentVideo.id);
-  videoPlayer.src = url;
+  videoPlayer.src = getVideoUrl(currentVideo.id);
   videoTitle.textContent = currentVideo.title;
 
   videoPlayer.load();
@@ -42,26 +41,11 @@ function loadVideo(index) {
 }
 
 // Botões
-document.getElementById("prevBtn").onclick = () => {
-  loadVideo(currentIndex - 1);
-};
-
-document.getElementById("nextBtn").onclick = () => {
-  loadVideo(currentIndex + 1);
-};
-
-document.getElementById("playBtn").onclick = () => {
-  videoPlayer.play();
-};
-
-document.getElementById("pauseBtn").onclick = () => {
-  videoPlayer.pause();
-};
-
-document.getElementById("backMenuBtn").onclick = () => {
-  window.location.href = "menu.html";
-};
-
+document.getElementById("prevBtn").onclick = () => loadVideo(currentIndex - 1);
+document.getElementById("nextBtn").onclick = () => loadVideo(currentIndex + 1);
+document.getElementById("playBtn").onclick = () => videoPlayer.play();
+document.getElementById("pauseBtn").onclick = () => videoPlayer.pause();
+document.getElementById("backMenuBtn").onclick = () => (window.location.href = "menu.html");
 document.getElementById("closeBtn").onclick = () => {
   if (confirm("Quer fechar esta janela?")) {
     window.close();
