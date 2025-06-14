@@ -9,4 +9,12 @@ const closeBtn = document.getElementById('closeBtn');
 playBtn.onclick = () => video.play();
 pauseBtn.onclick = () => video.pause();
 backMenuBtn.onclick = () => window.location.href = 'menu.html';
-closeBtn.onclick = () => alert('Fechar app');
+document.getElementById('closeBtn').onclick = () => {
+  if (confirm("Quer fechar esta janela?")) {
+    window.close();
+    setTimeout(() => {
+      alert("Não foi possível fechar a janela automaticamente. Feche-a manualmente.");
+    }, 500);
+  }
+};
+

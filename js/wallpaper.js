@@ -27,8 +27,13 @@ document.getElementById('backMenuBtn').onclick = () => {
 document.getElementById('closeBtn').onclick = () => {
   alert('Fechar app');
 };
-document.getElementById('downloadBtn').onclick = () => {
-  alert('Download não implementado ainda.');
+document.getElementById('closeBtn').onclick = () => {
+  if (confirm("Quer fechar esta janela?")) {
+    window.close();
+    setTimeout(() => {
+      alert("Não foi possível fechar a janela automaticamente. Feche-a manualmente.");
+    }, 500);
+  }
 };
 
 updateImage();

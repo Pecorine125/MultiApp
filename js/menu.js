@@ -17,5 +17,10 @@ document.getElementById('videoPrimeBtn').onclick = () => {
 };
 
 document.getElementById('closeAppBtn').onclick = () => {
-  alert('Fechar o aplicativo (aqui você pode implementar o fechamento real)');
+  if (confirm("Quer fechar esta janela?")) {
+    window.close();
+    setTimeout(() => {
+      alert("Não foi possível fechar a janela automaticamente. Feche-a manualmente.");
+    }, 500);
+  }
 };

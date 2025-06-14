@@ -15,4 +15,12 @@ document.getElementById('backBtn').onclick = () => window.history.back();
 document.getElementById('backMangaBtn').onclick = () => window.location.href = 'manga.html';
 document.getElementById('nextBtn').onclick = () => alert('Próximo mangá não implementado');
 document.getElementById('backMenuBtn').onclick = () => window.location.href = 'menu.html';
-document.getElementById('closeBtn').onclick = () => alert('Fechar app');
+document.getElementById('closeAppBtn').onclick = () => {
+  if (confirm("Quer fechar esta janela?")) {
+    window.close();
+    setTimeout(() => {
+      alert("Não foi possível fechar a janela automaticamente. Feche-a manualmente.");
+    }, 500);
+  }
+};
+
