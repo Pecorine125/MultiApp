@@ -1,7 +1,7 @@
 const videos = [
-  { id: "1JGx5ufrVfDYduZnQbdW5SuVw6NCsTTte", title: "Vídeo 1" },
-  { id: "1JGx5ufrVfDYduZnQbdW5SuVw6NCsTTte", title: "Vídeo 2 (mesmo ID só para teste)" },
-  { id: "1JGx5ufrVfDYduZnQbdW5SuVw6NCsTTte", title: "Vídeo 3" }
+  { id: "1w12kWimCe4HtN-LV2ZLDjIWJ0sE2gMPo", title: "Vídeo 1" },
+  { id: "1JGx5ufrVfDYduZnQbdW5SuVw6NCsTTte", title: "Vídeo 2" },
+  { id: "1tvFex7pQhB-qWxMaLcAfnBubnfjSGeXp", title: "Vídeo 3" }
 ];
 
 let currentIndex = 0;
