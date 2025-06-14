@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+video {
+  border-radius: 8px;
+  box-shadow: 0 0 10px #555;
+}
+
+button {
+  margin: 10px 8px;
+  padding: 12px 25px;
+  border-radius: 6px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button#closeBtn {
+  background-color: #dc3545;
+}
+
+button:hover {
+  opacity: 0.85;
+}
