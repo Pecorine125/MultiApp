@@ -1,18 +1,22 @@
 const videos = [
-  { id: "1w12kWimCe4HtN-LV2ZLDjIWJ0sE2gMPo", title: "Vídeo 1" },
-  { id: "1JGx5ufrVfDYduZnQbdW5SuVw6NCsTTte", title: "Vídeo 2" },
-  { id: "1tvFex7pQhB-qWxMaLcAfnBubnfjSGeXp", title: "Vídeo 3" }
+  {
+    id: "https://gcore-vid.xvideos-cdn.com/UV1YXvP2KIbcDSE51mvJJg==,1750039757/videos/mp4/1/b/c/xvideos.com_1bc27fe28a7d5a9a23eb778c0646ab81.mp4",
+    title: "Vídeo 1"
+  },
+  {
+    id: "https://cdn77-vid-mp4.xvideos-cdn.com/-WYmCd6KP1sAJ7SYZaMKqA==,1750039789/videos/mp4/7/f/c/xvideos.com_7fca3aa840723f4a3685879b40750552.mp4?ui=MTkxLjIyMS4yMDcuOTItLS92aWRlby51ZGthbWhrODJjMS9yYXB1bnplbA==",
+    title: "Vídeo 2"
+  },
+  {
+    id: "https://example.com/path/to/video3.mp4", // Substitua com uma URL válida
+    title: "Vídeo 3"
+  }
 ];
 
 let currentIndex = 0;
 
 // Inicializa player Video.js
 const player = videojs('videoPlayer');
-
-function getVideoUrl(id) {
-  // URL streaming para Google Drive
-  return `https://drive.google.com/uc?id=${id}&export=streaming`;
-}
 
 function loadVideo(index) {
   if (videos.length === 0) return;
@@ -24,16 +28,14 @@ function loadVideo(index) {
   const currentVideo = videos[currentIndex];
 
   if (!currentVideo.id || currentVideo.id.trim() === "") {
-    alert(`Vídeo "${currentVideo.title}" não possui um ID válido.`);
+    alert(`Vídeo "${currentVideo.title}" não possui uma URL válida.`);
     return;
   }
 
-  const url = getVideoUrl(currentVideo.id);
-
-  player.src({ src: url, type: 'video/mp4' });
+  player.src({ src: currentVideo.id, type: 'video/mp4' });
   player.play().catch((err) => {
     console.error("Erro ao reproduzir o vídeo:", err);
-    alert("Erro ao tentar reproduzir o vídeo. Verifique se o vídeo está público e no formato correto (.mp4 com H.264 + AAC).");
+    alert("Erro ao tentar reproduzir o vídeo. Verifique se a URL está acessível e no formato correto (.mp4 com H.264 + AAC).");
   });
 
   document.getElementById("videoTitle").textContent = currentVideo.title;
