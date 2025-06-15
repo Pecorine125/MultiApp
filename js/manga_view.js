@@ -9,7 +9,7 @@ const mangaImage = document.getElementById('mangaImage');
 mangaTitle.textContent = mangaName;
 
 // Você pode melhorar essa lógica para mostrar imagens específicas de cada mangá
-mangaImage.src = `../src/Manga/${mangaName}/capa.jpg`; // por exemplo
+mangaImage.src = `../src/Manga/${mangaName}/imagem 1.jpg`; // por exemplo
 
 document.getElementById('backBtn').onclick = () => window.history.back();
 document.getElementById('backMangaBtn').onclick = () => window.location.href = 'manga.html';
