@@ -1,14 +1,18 @@
 const videos = [
-  {
-    id: "https://gcore-vid.xvideos-cdn.com/UV1YXvP2KIbcDSE51mvJJg==,1750039757/videos/mp4/1/b/c/xvideos.com_1bc27fe28a7d5a9a23eb778c0646ab81.mp4",
-    title: "Vídeo Teste"
-  }
+  { id: "https://gcore-vid.xvideos-cdn.com/UV1YXvP2KIbcDSE51mvJJg==,1750039757/videos/mp4/1/b/c/xvideos.com_1bc27fe28a7d5a9a23eb778c0646ab81.mp4", title: "Vídeo 1" },
+  { id: "https://cdn77-vid-mp4.xvideos-cdn.com/-WYmCd6KP1sAJ7SYZaMKqA==,1750039789/videos/mp4/7/f/c/xvideos.com_7fca3aa840723f4a3685879b40750552.mp4?ui=MTkxLjIyMS4yMDcuOTItLS92aWRlby51ZGthbWhrODJjMS9yYXB1bnplbA==", title: "Vídeo 2" },
+  { id: "https://exemplo.com/video3.mp4", title: "Vídeo 3" },
 ];
 
 let currentIndex = 0;
 const player = videojs('videoPlayer');
 
 function loadVideo(index) {
+  if (videos.length === 0) {
+    alert("Não há vídeos para reproduzir.");
+    return;
+  }
+
   if (index < 0) index = videos.length - 1;
   if (index >= videos.length) index = 0;
 
@@ -21,7 +25,7 @@ function loadVideo(index) {
   }
 
   player.src({ src: currentVideo.id, type: 'video/mp4' });
-  player.play().catch((err) => {
+  player.play().catch(err => {
     console.error("Erro ao reproduzir o vídeo:", err);
     alert("Erro ao tentar reproduzir o vídeo.");
   });
@@ -29,6 +33,7 @@ function loadVideo(index) {
   document.getElementById("videoTitle").textContent = currentVideo.title;
 }
 
+// Navegação por botões
 document.getElementById("prevBtn").onclick = () => loadVideo(currentIndex - 1);
 document.getElementById("nextBtn").onclick = () => loadVideo(currentIndex + 1);
 document.getElementById("playBtn").onclick = () => player.play();
@@ -41,4 +46,10 @@ document.getElementById("closeBtn").onclick = () => {
   }
 };
 
+// Opcional: Avança para próximo vídeo quando terminar o atual
+player.on('ended', () => {
+  loadVideo(currentIndex + 1);
+});
+
+// Carrega o primeiro vídeo ao iniciar
 loadVideo(0);
