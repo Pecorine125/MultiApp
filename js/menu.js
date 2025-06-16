@@ -1,26 +1,37 @@
 console.log("menu.js carregado");
 
-document.getElementById('wallpaperEspecialBtn').onclick = () => {
+// Função para adicionar evento com verificação
+function addClickListener(id, callback) {
+  const btn = document.getElementById(id);
+  if (btn) {
+    btn.addEventListener("click", callback);
+  } else {
+    console.warn(`Botão com ID "${id}" não encontrado.`);
+  }
+}
+
+// Redirecionamentos
+addClickListener('wallpaperEspecialBtn', () => {
   window.location.href = 'wallpaper.html';
-};
+});
 
-document.getElementById('musicPrimeBtn').onclick = () => {
+addClickListener('musicPrimeBtn', () => {
   window.location.href = 'music.html';
-};
+});
 
-document.getElementById('mangaBtn').onclick = () => {
-  window.location.href = 'manga_menu.html';
-};
+addClickListener('mangaBtn', () => {
+  window.location.href = 'manga/manga_menu.html'; // ajuste o caminho se estiver em outra pasta
+});
 
-document.getElementById('videoPrimeBtn').onclick = () => {
+addClickListener('videoPrimeBtn', () => {
   window.location.href = 'video.html';
-};
+});
 
-document.getElementById('closeAppBtn').onclick = () => {
+addClickListener('closeAppBtn', () => {
   if (confirm("Quer fechar esta janela?")) {
     window.close();
     setTimeout(() => {
       alert("Não foi possível fechar a janela automaticamente. Feche-a manualmente.");
     }, 500);
   }
-};
+});
