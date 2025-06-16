@@ -11,4 +11,4 @@ const interval = setInterval(() => {
   value++;
   progressBar.value = value;
   percent.textContent = value + '%';
-}, 100);
+}, 1);
