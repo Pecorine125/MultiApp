@@ -26,6 +26,9 @@ button.mangaBtn {
   color: white;
   cursor: pointer;
   font-size: 16px;
+  width: 220px; /* largura fixa para todos */
+  box-sizing: border-box; /* para garantir que padding não aumente a largura */
+  text-align: center; /* centraliza texto dentro do botão */
 }
 
 button.mangaBtn:hover {
