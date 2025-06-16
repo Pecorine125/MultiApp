@@ -1,19 +1,19 @@
 console.log("menu.js carregado");
 
 document.getElementById('wallpaperEspecialBtn').onclick = () => {
-  window.location.href = 'html/wallpaper.html';
+  window.location.href = 'wallpaper.html';
 };
 
 document.getElementById('musicPrimeBtn').onclick = () => {
-  window.location.href = 'html/music.html';
+  window.location.href = 'music.html';
 };
 
 document.getElementById('mangaBtn').onclick = () => {
-  window.location.href = 'html/manga_menu.html';
+  window.location.href = 'manga_menu.html'; // ✅ Corrigido aqui
 };
 
 document.getElementById('videoPrimeBtn').onclick = () => {
-  window.location.href = 'html/video.html';
+  window.location.href = 'video.html';
 };
 
 document.getElementById('closeAppBtn').onclick = () => {
