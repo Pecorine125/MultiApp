@@ -8,13 +8,39 @@ const mangaImage = document.getElementById('mangaImage');
 
 mangaTitle.textContent = mangaName;
 
-// Você pode melhorar essa lógica para mostrar imagens específicas de cada mangá
-mangaImage.src = `../src/Manga/${mangaName}/imagem 1.jpg`; // por exemplo
+let currentImageNumber = 1;
+const maxImages = 10; // Ajuste aqui para o máximo de imagens que seu mangá tem
 
-document.getElementById('backBtn').onclick = () => window.history.back();
+function atualizarImagem() {
+  mangaImage.src = `../src/Manga/${mangaName}/imagem ${currentImageNumber}.jpg`;
+}
+
+// Inicializa imagem
+atualizarImagem();
+
+// Botões de navegação
+document.getElementById('backBtn').onclick = () => {
+  if (currentImageNumber > 1) {
+    currentImageNumber--;
+    atualizarImagem();
+  } else {
+    alert("Esta é a primeira imagem.");
+  }
+};
+
+document.getElementById('nextBtn').onclick = () => {
+  if (currentImageNumber < maxImages) {
+    currentImageNumber++;
+    atualizarImagem();
+  } else {
+    alert("Esta é a última imagem.");
+  }
+};
+
 document.getElementById('backMangaBtn').onclick = () => window.location.href = 'manga.html';
-document.getElementById('nextBtn').onclick = () => alert('Próximo mangá não implementado');
+
 document.getElementById('backMenuBtn').onclick = () => window.location.href = 'menu.html';
+
 document.getElementById('closeAppBtn').onclick = () => {
   if (confirm("Quer fechar esta janela?")) {
     window.close();
@@ -23,4 +49,3 @@ document.getElementById('closeAppBtn').onclick = () => {
     }, 500);
   }
 };
-
