@@ -24,6 +24,9 @@ button {
   background-color: #6c757d;
   color: white;
   cursor: pointer;
+  width: 140px; /* largura fixa para todos os botões */
+  box-sizing: border-box; /* inclui padding na largura total */
+  text-align: center;
 }
 
 button#closeBtn {
