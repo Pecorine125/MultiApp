@@ -12,19 +12,19 @@ function addClickListener(id, callback) {
 
 // Redirecionamentos
 addClickListener('wallpaperEspecialBtn', () => {
-  window.location.href = 'wallpaper.html';
+  window.location.href = 'html/wallpaper.html';
 });
 
 addClickListener('musicPrimeBtn', () => {
-  window.location.href = 'music.html';
+  window.location.href = 'html/music.html';
 });
 
 addClickListener('mangaBtn', () => {
-  window.location.href = 'manga/manga_menu.html'; // ajuste o caminho se estiver em outra pasta
+  window.location.href = 'html/manga_menu.html'; // ajuste o caminho se estiver em outra pasta
 });
 
 addClickListener('videoPrimeBtn', () => {
-  window.location.href = 'video.html';
+  window.location.href = 'html/video.html';
 });
 
 addClickListener('closeAppBtn', () => {
