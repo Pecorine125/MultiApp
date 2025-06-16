@@ -9,35 +9,29 @@ const mangaImage = document.getElementById('mangaImage');
 mangaTitle.textContent = mangaName;
 
 let currentImageNumber = 1;
-let maxImages = 1;  // padrão, caso JSON não carregue
+let maxImages = 1;
 
-// Função para atualizar a imagem exibida
+// Atualiza a imagem exibida
 function atualizarImagem() {
   mangaImage.src = `../src/Manga/${mangaName}/imagem ${currentImageNumber}.jpg`;
 }
 
-// Carrega o JSON com dados dos mangás e imagens
-fetch('../mangas.json')
+// Busca o número total de imagens do mangá no JSON
+fetch('../Json/mangas.json')
   .then(response => {
-    if (!response.ok) {
-      throw new Error('Falha ao carregar mangas.json');
-    }
+    if (!response.ok) throw new Error('Erro ao carregar mangas.json');
     return response.json();
   })
   .then(data => {
-    if (data[mangaName]) {
-      maxImages = data[mangaName];
-    } else {
-      maxImages = data["Mangá Desconhecido"] || 1;
-    }
+    maxImages = data[mangaName] || data["Mangá Desconhecido"] || 1;
     atualizarImagem();
   })
   .catch(error => {
     console.error('Erro ao carregar JSON:', error);
-    atualizarImagem(); // mesmo assim tenta mostrar a imagem 1
+    atualizarImagem(); // mostra mesmo se JSON falhar
   });
 
-// Navegação dos botões
+// Navegação
 document.getElementById('backBtn').onclick = () => {
   if (currentImageNumber > 1) {
     currentImageNumber--;
@@ -56,11 +50,17 @@ document.getElementById('nextBtn').onclick = () => {
   }
 };
 
-document.getElementById('backMangaBtn').onclick = () => window.location.href = 'manga.html';
+// Corrigidos os caminhos
+document.getElementById('backMangaBtn').onclick = () => {
+  window.location.href = 'manga_menu.html';
+};
 
-document.getElementById('backMenuBtn').onclick = () => window.location.href = 'menu.html';
+document.getElementById('backMenuBtn').onclick = () => {
+  window.location.href = 'menu.html';
+};
 
-document.getElementById('closeAppBtn').onclick = () => {
+// Corrige o ID do botão de fechar
+document.getElementById('closeBtn').onclick = () => {
   if (confirm("Quer fechar esta janela?")) {
     window.close();
     setTimeout(() => {
