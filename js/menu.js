@@ -9,7 +9,7 @@ document.getElementById('musicPrimeBtn').onclick = () => {
 };
 
 document.getElementById('mangaBtn').onclick = () => {
-  window.location.href = 'manga_menu.html';
+  window.location.href = 'html/manga_menu.html';
 };
 
 document.getElementById('videoPrimeBtn').onclick = () => {
