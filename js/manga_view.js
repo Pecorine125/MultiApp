@@ -9,16 +9,35 @@ const mangaImage = document.getElementById('mangaImage');
 mangaTitle.textContent = mangaName;
 
 let currentImageNumber = 1;
-const maxImages = 10; // Ajuste aqui para o máximo de imagens que seu mangá tem
+let maxImages = 1;  // padrão, caso JSON não carregue
 
+// Função para atualizar a imagem exibida
 function atualizarImagem() {
   mangaImage.src = `../src/Manga/${mangaName}/imagem ${currentImageNumber}.jpg`;
 }
 
-// Inicializa imagem
-atualizarImagem();
+// Carrega o JSON com dados dos mangás e imagens
+fetch('../mangas.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Falha ao carregar mangas.json');
+    }
+    return response.json();
+  })
+  .then(data => {
+    if (data[mangaName]) {
+      maxImages = data[mangaName];
+    } else {
+      maxImages = data["Mangá Desconhecido"] || 1;
+    }
+    atualizarImagem();
+  })
+  .catch(error => {
+    console.error('Erro ao carregar JSON:', error);
+    atualizarImagem(); // mesmo assim tenta mostrar a imagem 1
+  });
 
-// Botões de navegação
+// Navegação dos botões
 document.getElementById('backBtn').onclick = () => {
   if (currentImageNumber > 1) {
     currentImageNumber--;
